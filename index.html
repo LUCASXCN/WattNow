@@ -42,6 +42,18 @@ h1{font-size:56px;font-weight:800;letter-spacing:-1px;margin-bottom:12px}
 .footer{text-align:center;padding:40px 24px 60px;color:rgba(255,255,255,.3);font-size:14px;border-top:1px solid rgba(255,255,255,.06)}
 .badges{display:flex;gap:10px;justify-content:center;margin-bottom:32px;flex-wrap:wrap}
 .badge{padding:6px 16px;border-radius:12px;font-size:13px;font-weight:600}
+.whatsnew{max-width:960px;margin:0 auto;padding:20px 24px 60px}
+.whatsnew h2{font-size:28px;font-weight:800;margin-bottom:8px;text-align:center}
+.whatsnew .ver{text-align:center;color:rgba(255,255,255,.4);font-size:14px;margin-bottom:28px}
+.wn-group{background:rgba(255,255,255,.05);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;padding:24px 28px;margin-bottom:16px}
+.wn-group h3{font-size:17px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.wn-tag-new{background:rgba(93,217,122,.18);color:#5dd97a;padding:3px 12px;border-radius:10px;font-size:12px;font-weight:700}
+.wn-tag-fix{background:rgba(255,170,90,.18);color:#ffaa5a;padding:3px 12px;border-radius:10px;font-size:12px;font-weight:700}
+.wn-group ul{list-style:none}
+.wn-group li{font-size:15px;color:rgba(255,255,255,.65);line-height:1.7;padding:6px 0 6px 26px;position:relative}
+.wn-group li::before{content:"";position:absolute;left:4px;top:14px;width:7px;height:7px;border-radius:50%;background:#8b5cf6}
+.wn-group li strong{color:#fff;font-weight:600}
 </style>
 </head>
 <body>
@@ -56,17 +68,41 @@ h1{font-size:56px;font-weight:800;letter-spacing:-1px;margin-bottom:12px}
     <span class="badge" style="background:rgba(93,217,122,.15);color:#5dd97a">限时免费</span>
     <span class="badge" style="background:rgba(109,179,255,.15);color:#6db3ff">数据本地 · 零上传</span>
   </div>
-  <a href="WattNow.zip" class="dl-btn">⬇ 下载 WattNow v1.1</a>
-  <div class="dl-meta">2.6 MB · macOS 14+ · 仅 Apple Silicon MacBook</div>
+  <a href="WattNow.zip" class="dl-btn">⬇ 下载 WattNow v1.2</a>
+  <div class="dl-meta">2.7 MB · macOS 14+ · 仅 Apple Silicon MacBook（充电限制需 macOS 26.4+）</div>
 </div>
 
 <div class="features">
-  <div class="card"><span class="emoji">🔋</span><h3>总览一屏全有</h3><p>DC实时输入、系统负载、电池、协商上限、所有端口状态，点开菜单栏就看得到。</p></div>
+  <div class="card" style="border-color:rgba(93,217,122,.35);background:rgba(93,217,122,.06)"><span class="emoji">🔋</span><h3>充电限制 <span style="font-size:12px;color:#5dd97a;border:1px solid rgba(93,217,122,.4);border-radius:8px;padding:2px 8px;margin-left:6px">V1.2 新增</span></h3><p>系统级原生充电上限，滑块可选 80% / 85% / 90% / 95% / 100%（默认 80%）。借助快捷指令调用系统动作，到达阈值后适配器保持在线、只掐电池充电，不是断适配器掉电再回充。无需 root、无需后台助手。（需 macOS 26.4+）</p></div>
+  <div class="card"><span class="emoji">📊</span><h3>总览一屏全有</h3><p>DC实时输入、系统负载、电池、协商上限、所有端口状态，点开菜单栏就看得到。</p></div>
   <div class="card"><span class="emoji">📱</span><h3>反向供电监测</h3><p>Mac给手机充电也能实时看，多设备同时检测，V×A=W、电量、充满时间全有。</p></div>
   <div class="card"><span class="emoji">📊</span><h3>用电统计 & 健康档案</h3><p>累计用电量自动算电费，近7天柱状图，设备健康评分，支持CSV导出。</p></div>
   <div class="card"><span class="emoji">📈</span><h3>电源监视器</h3><p>30秒到30分五档时间窗，功率曲线四线同图，可弹独立窗口。</p></div>
   <div class="card"><span class="emoji">🔌</span><h3>协商诊断 & 线缆解析</h3><p>Mac→线缆→充电器三层找瓶颈，线缆E-Marker身份、速率、EPR 240W、24针脚全透明。</p></div>
   <div class="card"><span class="emoji">🎨</span><h3>四套主题随心换</h3><p>经典 / 极简 / 曜黑 / 奶芙，毛玻璃程度自由调节，支持自定义壁纸。</p></div>
+</div>
+
+<div class="whatsnew">
+  <h2>更新日志</h2>
+  <div class="ver">WattNow v1.2 · 2026-09-06</div>
+
+  <div class="wn-group">
+    <h3><span class="wn-tag-new">新增</span></h3>
+    <ul>
+      <li><strong>系统级原生充电上限</strong>：总览页新增「充电限制」卡片，滑块可选 <strong>80% / 85% / 90% / 95% / 100%</strong> 五档（默认 80%），一键导入系统快捷指令即可使用。</li>
+      <li><strong>借助快捷指令（Shortcuts）实现</strong>：调用 macOS 26.4 新增的系统 SetBatteryChargeLimit 动作，写入的就是「系统设置 &gt; 电池」里那同一个上限值。</li>
+      <li><strong>真正的原生式体验</strong>：到达阈值后适配器保持在线、只掐电池充电，<strong>不是</strong>断适配器掉电再回充；无需 root、无需后台助手、不经过任何网络。</li>
+      <li>设置后自动通过 <code>pmset -g battlimit</code> 回读确认生效，卡片实时显示系统当前实际上限。</li>
+    </ul>
+  </div>
+
+  <div class="wn-group">
+    <h3><span class="wn-tag-fix">修复 / 优化</span></h3>
+    <ul>
+      <li><strong>彻底移除 Python 依赖</strong>：原 iPhone 电池读取依赖 <code>/usr/bin/python3</code>，未装 Xcode 命令行工具的用户打开软件会触发系统「正在下载软件」弹窗。现改用 <strong>Swift 原生 SecureTransport TLS</strong> 重写，App 包内零 .py 文件，打开即用、不再弹下载。</li>
+      <li><strong>修复 MagSafe 图标不显示</strong>：powerplug / powerplug.fill 符号在部分机型渲染异常，全部替换为 cable.connector.horizontal（MagSafe 横向接头）与 bolt.fill（供电 / 充电器）。</li>
+    </ul>
+  </div>
 </div>
 
 <div class="install">
@@ -75,10 +111,11 @@ h1{font-size:56px;font-weight:800;letter-spacing:-1px;margin-bottom:12px}
   <div class="step"><div class="step-num">2</div><p><strong>拖入应用程序</strong>：将 WattNow.app 拖到「应用程序」文件夹。</p></div>
   <div class="step"><div class="step-num">3</div><p><strong>首次打开</strong>：右键 WattNow.app → 选择「打开」，在弹窗中再次点击「打开」即可（因未经过公证，首次需右键打开）。</p></div>
   <div class="step"><div class="step-num">4</div><p><strong>开始使用</strong>：软件启动后会出现在菜单栏右上角，点击图标即可展开面板。</p></div>
+  <div class="step"><div class="step-num">5</div><p><strong>开启充电限制（可选，需 macOS 26.4+）</strong>：在总览页「充电限制」卡片点「一键导入快捷指令」，在弹出的预览里点「添加快捷指令」即可，之后拖动滑块选上限、点「确认」生效。</p></div>
 </div>
 
 <div class="footer">
-  WattNow v1.1 · 纯 Swift + SwiftUI + Swift Charts · IOKit 直读硬件 · 零第三方依赖<br>
+  WattNow v1.2 · 纯 Swift + SwiftUI + Swift Charts · IOKit 直读硬件 · 零第三方依赖 · 零 Python 依赖<br>
   数据全部本地读取与存储，不上传任何信息 · 仅支持 Apple Silicon MacBook（macOS 14 及以上）
 </div>
 

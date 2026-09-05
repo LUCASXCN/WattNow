@@ -22,6 +22,9 @@ Mac→线缆→充电器三层找瓶颈，PDO 档位全列出；线缆 E-Marker 
 ⚡ **MagSafe & 显示 & 通知 & 四主题**
 MagSafe 五触点、显示器带宽诊断、充电事件智能通知，经典 / 极简 / 曜黑 / 奶芙四套主题随心换。
 
+🔋 **充电限制（V1.1 新增）**
+系统级原生充电上限，总览页滑块可选 80% / 85% / 90% / 95% / 100%（默认 80%）。到达阈值后适配器保持在线、只掐电池充电，不是断适配器掉电再回充。无需 root、无需后台助手，一键导入系统快捷指令即可使用。（需要 macOS 26.4+）
+
 ## 技术栈
 
 ✒️ 纯 Swift + SwiftUI + Swift Charts，IOKit 直读硬件，本地 JSON，零第三方依赖。
@@ -30,9 +33,16 @@ MagSafe 五触点、显示器带宽诊断、充电事件智能通知，经典 / 
 
 - Apple Silicon MacBook（M1 及更新）
 - macOS 14 及以上
+- 充电限制功能需要 macOS 26.4+
 
 ## 下载
 
-👉 [点击下载 WattNow v1.1](https://LUCASXCN.github.io/WattNow/WattNow.zip)（2.6 MB）
+👉 [点击下载 WattNow v1.2](https://LUCASXCN.github.io/WattNow/WattNow.zip)（2.7 MB）
+
+## V1.2 更新
+
+- **新增**：系统级原生充电上限（macOS 26.4+），滑块 80/85/90/95/100%，默认 80%
+- **修复**：彻底移除 Python 依赖，改用 Swift 原生 TLS，解决未装 Xcode CLT 的用户触发 Python3 下载弹窗
+- **修复**：MagSafe 图标不显示
 
 充电这件小事，从此明明白白。
