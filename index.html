@@ -68,7 +68,7 @@ h1{font-size:56px;font-weight:800;letter-spacing:-1px;margin-bottom:12px}
     <span class="badge" style="background:rgba(93,217,122,.15);color:#5dd97a">限时免费</span>
     <span class="badge" style="background:rgba(109,179,255,.15);color:#6db3ff">数据本地 · 零上传</span>
   </div>
-  <a href="WattNow.zip" class="dl-btn">⬇ 下载 WattNow v1.2</a>
+  <a href="WattNow.zip" class="dl-btn">⬇ 下载 WattNow v1.2.1</a>
   <div class="dl-meta">2.7 MB · macOS 14+ · 仅 Apple Silicon MacBook（充电限制需 macOS 26.4+）</div>
 </div>
 
@@ -84,6 +84,26 @@ h1{font-size:56px;font-weight:800;letter-spacing:-1px;margin-bottom:12px}
 
 <div class="whatsnew">
   <h2>更新日志</h2>
+  <div class="ver">WattNow v1.2.1 · 2026-09-06</div>
+
+  <div class="wn-group">
+    <h3><span class="wn-tag-new">新增 / 提速</span></h3>
+    <ul>
+      <li><strong>反向供电也能读 iPhone 电量</strong>：Mac 给 iPhone 充电时，总览页「反向供电」卡片和端口行会显示手机实时电量百分比与进度条。</li>
+      <li><strong>后台读取开销降低约 95%</strong>：iPhone 型号在连接期间缓存、电池电量 5 秒读取一次并复用，不再每秒重复加密握手；自动跳过仅 Wi‑Fi 同步、并未实际接线的设备，避免网络等待拖慢刷新。</li>
+      <li><strong>界面更跟手</strong>：SMC 键信息缓存、电池信息一次读取全程复用、端口 UUID 复用，后台硬件扫描降到「实用级」优先级把大核让给界面；实测面板不打开时后台 CPU 占用低于 1%。</li>
+    </ul>
+  </div>
+
+  <div class="wn-group">
+    <h3><span class="wn-tag-fix">修复 / 稳定</span></h3>
+    <ul>
+      <li><strong>修复已信任电脑后仍偶发不显示 iPhone 电池百分比</strong>：原生 SecureTransport TLS 链路加固，稳定读到手机电量。</li>
+      <li><strong>修复「记录 - 反向输出按设备」</strong>：不再显示内部编号（如 -1:），同一台手机因识别时机不同被拆成多条的问题改为按设备名自动归并。</li>
+      <li><strong>稳定性加固</strong>：回退一条可能引发崩溃的激进硬件缓存路径，长时间常驻、反复插拔不再崩溃，八个页面逐页真机走查流畅。</li>
+    </ul>
+  </div>
+
   <div class="ver">WattNow v1.2 · 2026-09-06</div>
 
   <div class="wn-group">
@@ -115,7 +135,7 @@ h1{font-size:56px;font-weight:800;letter-spacing:-1px;margin-bottom:12px}
 </div>
 
 <div class="footer">
-  WattNow v1.2 · 纯 Swift + SwiftUI + Swift Charts · IOKit 直读硬件 · 零第三方依赖 · 零 Python 依赖<br>
+  WattNow v1.2.1 · 纯 Swift + SwiftUI + Swift Charts · IOKit 直读硬件 · 零第三方依赖 · 零 Python 依赖<br>
   数据全部本地读取与存储，不上传任何信息 · 仅支持 Apple Silicon MacBook（macOS 14 及以上）
 </div>
 
